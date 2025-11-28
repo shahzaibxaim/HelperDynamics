@@ -1,382 +1,154 @@
-<!doctype html>
+<!-- Updated Advanced UI with Microsoft Blue + Purple Gradient Theme -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Helper Dynamics — Microsoft Dynamics 365 & Power Platform Consultant</title>
-  <meta name="description" content="Helper Dynamics — Your Partner in Dynamics 365 & Power Platform. Microsoft-Certified Techno-Functional Consultant, Copilot Specialist." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <style>
-    /* Advanced & Modern Variables */
-    :root{
-      --blue:#0078D4; /* Microsoft Blue */
-      --dark:#050B1B; /* Deep Space Blue */
-      --muted:#9BB8D9;
-      --gold:#FFB74D; /* Modern Gold Accent */
-      --card-bg:rgba(255, 255, 255, 0.06); /* Lighter glass background */
-      --card-border:rgba(255, 255, 255, 0.1); /* Stronger border for visibility */
-      --text-primary:#EAF4FF;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    }
-    *{box-sizing:border-box}
-    
-    /* Background and General Layout */
-    body{
-      margin:0;
-      background:var(--dark);
-      /* Subtle Radial Gradient for Depth */
-      background-image: radial-gradient(at 0% 0%, rgba(0, 110, 255, 0.1), transparent 50%), 
-                        radial-gradient(at 100% 100%, rgba(255, 183, 77, 0.1), transparent 70%);
-      color:var(--text-primary);
-      line-height:1.6;
-      min-height: 100vh;
-    }
-    .container{max-width:1200px;margin:0 auto;padding:40px 30px}
-    
-    /* Header & Navigation */
-    header{display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:16px}
-    .logo{
-      width:56px;height:56px;border-radius:14px;
-      background:linear-gradient(135deg,var(--blue),#38a5ff);
-      display:flex;align-items:center;justify-content:center;
-      font-weight:800;font-size: 20px;
-      color:white;
-      box-shadow: 0 4px 10px rgba(0, 120, 212, 0.3);
-    }
-    h1{margin:0;font-size:24px; font-weight: 700;}
-    .tag{color:var(--muted);font-size:14px}
-    nav a{
-      color:rgba(255,255,255,0.75);
-      text-decoration:none;
-      margin-left:24px;
-      font-weight:600;
-      padding: 4px 0;
-      position: relative;
-      transition: color 0.3s ease;
-    }
-    nav a:hover{color:white;}
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -4px;
-      left: 50%;
-      background: var(--blue);
-      transition: width 0.3s ease, left 0.3s ease;
-    }
-    nav a:hover::after {
-      width: 100%;
-      left: 0;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Helper Dynamics – Microsoft Dynamics 365 & Power Platform Consultants</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: #f4f7fb;
+            color: #1b1f3b;
+        }
 
-    /* Hero Section */
-    .hero{display:flex;gap:48px;align-items:center;margin-top:50px}
-    .hero-left{flex:1}
-    .kicker{
-      display:inline-block;padding:8px 16px;
-      background:rgba(255, 255, 255, 0.1); 
-      backdrop-filter: blur(5px);
-      border-radius:999px;
-      color:var(--gold);
-      font-weight:700;font-size:14px;
-      border: 1px solid var(--card-border);
-    }
-    .hero h2{font-size:48px;margin:16px 0 12px; line-height: 1.2; font-weight: 800;}
-    .lead{color:var(--muted);font-size: 18px; margin-bottom:24px}
-    .cta-row{display:flex;gap:16px}
-    .btn{
-      background:linear-gradient(45deg, var(--blue), #38a5ff);
-      border:none;padding:14px 24px;
-      border-radius:12px;
-      font-weight:700;color:white;cursor:pointer;
-      box-shadow: 0 4px 15px rgba(0, 120, 212, 0.4);
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 120, 212, 0.6);
-    }
-    .btn.ghost{
-      background:transparent;
-      border:1px solid var(--card-border);
-      box-shadow: none;
-    }
-    .btn.ghost:hover{
-      background:rgba(255,255,255,0.08);
-      transform: translateY(0);
-    }
+        /* HEADER */
+        header {
+            background: linear-gradient(120deg, #0057d9, #7f4bff);
+            color: white;
+            padding: 60px 30px;
+            text-align: center;
+        }
 
-    .hero-right{
-      width:460px;
-      background: var(--card-bg);
-      backdrop-filter: blur(10px); /* Glass effect */
-      padding:30px;
-      border-radius:16px;
-      border:1px solid var(--card-border);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    }
-    .contact-box{display:flex;flex-direction:column;gap:12px}
-    .contact-box strong{color:var(--gold); font-weight: 600;}
+        header h1 {
+            font-size: 48px;
+            font-weight: 700;
+        }
 
-    /* Skill Tags */
-    .skill{
-      display:inline-block;padding:8px 14px;
-      background:rgba(255,255,255,0.08);
-      border-radius:8px;
-      margin:8px 8px 0 0;
-      font-weight:500;
-      color:#e8f6ff;
-      font-size: 14px;
-    }
+        header p {
+            font-size: 20px;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
 
-    /* Services Cards */
-    h2{font-size:36px;margin-top:48px;margin-bottom:24px; font-weight: 800;}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:20px}
-    .card{
-      background:var(--card-bg);
-      backdrop-filter: blur(8px);
-      padding:24px;
-      border-radius:16px;
-      border:1px solid var(--card-border);
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.1);
-    }
-    .card h3{margin:0 0 10px; font-weight: 700; font-size: 20px;}
-    .muted{color:var(--muted);font-size:15px}
+        .btn-primary {
+            background: white;
+            color: #0057d9;
+            padding: 12px 25px;
+            font-size: 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-primary:hover {
+            background: #e9e9ff;
+        }
 
-    /* Projects */
-    .projects{margin-top:40px}
-    .project-list{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .project{
-      padding:18px;
-      border-radius:12px;
-      background:rgba(255,255,255,0.05);
-      border:1px solid var(--card-border);
-      transition: background 0.3s ease;
-    }
-    .project:hover {
-      background:rgba(255,255,255,0.08);
-    }
-    .project strong {font-size: 17px; display: block; margin-bottom: 4px;}
+        /* SECTION TITLES */
+        section h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 60px;
+            color: #1b1f3b;
+        }
 
-    /* Contact Form Styling */
-    input, textarea {
-      padding:12px !important;
-      border-radius:10px !important;
-      border:1px solid rgba(255,255,255,0.15) !important;
-      background:rgba(0, 0, 0, 0.1) !important;
-      color:inherit !important;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-      font-size: 16px;
-    }
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: var(--blue) !important;
-      box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.3);
-      background: rgba(0, 0, 0, 0.2) !important;
-    }
+        /* SERVICES */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+        .service-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+        }
+        .service-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        }
+        .service-box h3 {
+            color: #0057d9;
+        }
 
-
-    /* Footer */
-    footer{margin-top:50px;padding:30px 0;border-top:1px solid rgba(255,255,255,0.08);color:var(--muted); font-size: 14px;}
-
-    /* Responsive */
-    @media (max-width:1000px){
-      .hero{flex-direction:column; gap: 30px;}
-      .hero-right{width:100%; max-width: 100%;}
-      .grid{grid-template-columns:repeat(2,1fr)}
-      .hero h2{font-size:36px;}
-    }
-    @media (max-width:650px){
-      .grid{grid-template-columns:repeat(1,1fr)}
-      .project-list{grid-template-columns:repeat(1,1fr)}
-      nav{display:none}
-      .logo{width:48px;height:48px;font-size: 18px;}
-      h1{font-size:18px;}
-      .tag{font-size:12px;}
-      .hero h2{font-size:28px;}
-      .lead{font-size: 16px;}
-      .btn{padding:10px 18px; font-size: 14px;}
-      .cta-row{flex-direction: column;}
-    }
-  </style>
+        /* FOOTER */
+        footer {
+            background: #1b1f3b;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">HD</div>
-        <div>
-          <h1>Helper Dynamics</h1>
-          <div class="tag">Your Partner In Dynamics 365 — Microsoft Dynamics 365 & Power Platform Consultant</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
 
-    <section class="hero">
-      <div class="hero-left">
-        <div class="kicker">Microsoft-Certified • Copilot Specialist</div>
-        <h2>Scale business value with Dynamics 365 & Power Platform — secure, measurable, future-ready solutions.</h2>
-        <p class="lead">We deliver scalable solutions across Dynamics 365 (Sales, Customer Service, Field Service, Marketing, Business Central, F&O) and the Microsoft ecosystem (Azure, Microsoft 365, Fabric). From Copilot readiness & secure deployments to custom Copilot agents and enterprise automation — we turn AI into measurable ROI.</p>
-        <div class="cta-row">
-          <a class="btn" href="#contact">Get a Consultation</a>           <a class="btn ghost" href="#projects">View Projects</a>
-        </div>
+    <!-- HEADER -->
+    <header>
+        <h1>Helper Dynamics</h1>
+        <p>Your Partner In Dynamics 365 & Microsoft Power Platform</p>
+        <a href="#contact" class="btn-primary">Get a Consultation</a>
+    </header>
 
-        <div style="margin-top:24px">
-          <div style="font-weight:700;margin-bottom:8px">Core Capabilities</div>
-          <div>
-            <span class="skill">Dynamics 365: Sales</span>
-            <span class="skill">Customer Service</span>
-            <span class="skill">Field Service</span>
-            <span class="skill">Power Pages</span>
-            <span class="skill">Power BI</span>
-            <span class="skill">Power Automate</span>
-          </div>
-        </div>
-      </div>
+    <!-- ABOUT -->
+    <section>
+        <h2>About Us</h2>
+        <p style="max-width: 900px; margin: auto; text-align: center; font-size: 18px;">
+            We are a Microsoft-certified company specializing in Dynamics 365, Power Platform, Power Pages, Azure, and AI-based Copilot integrations.
+            We build scalable, future-ready enterprise solutions across CRM, Power Apps, automations, and custom development.
+        </p>
+    </section>
 
-      <aside class="hero-right">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start">
-          <div>
-            <div style="font-size:14px;color:var(--muted)">Top-rated consultant</div>
-            <div style="font-weight:700;margin-top:6px; font-size: 18px;">🏅 Microsoft-Certified Techno-Functional Consultant</div>
-          </div>
-          <div style="text-align:right;color:var(--muted);font-size:14px">Shahzaib Aslam</div>
-        </div>
+    <!-- SERVICES -->
+    <section>
+        <h2>Our Services</h2>
 
-        <div class="contact-box" style="margin-top:20px">
-          <div><strong>Email:</strong> sohailsaim72@gmail.com</div>
-          <div><strong>Phone:</strong> +92 304 9639965</div>
-          <div><strong>Alternate:</strong> Shahzaibxaim@gmail.com | +92 306 6444090</div>
-        </div>
+        <div class="services">
+            <div class="service-box">
+                <h3>Microsoft Dynamics 365</h3>
+                <p>Sales, Customer Service, Field Service, Marketing, Business Central, Finance & Operations.</p>
+            </div>
 
-        <div style="margin-top:20px;border-radius:10px;padding:15px;background:rgba(255,255,255,0.01);border:1px dashed rgba(255,255,255,0.04)"> 
-          <div style="font-weight:700;margin-bottom:6px; color: var(--text-primary);">Copilot & AI Services</div>
-          <div class="muted">Readiness assessments, custom Copilot agents, secure integrations, and automation to unlock AI in Dynamics & Microsoft 365.</div>
-        </div>
-      </aside>
-    </section>
-    
-    <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 50px 0;">
+            <div class="service-box">
+                <h3>Microsoft Power Platform</h3>
+                <p>Power Apps, Power Automate, Power BI, Power Pages, Dataverse architecture & enterprise automations.</p>
+            </div>
 
-    <section id="services">
-      <h2>Services</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Microsoft Dynamics 365</h3>
-          <div class="muted">CRM implementations, Sales, Customer Service, Field Service, Marketing, Business Central, F&O.</div>
-        </div>
-        <div class="card">
-          <h3>Power Platform</h3>
-          <div class="muted">Power Pages, Canvas Apps, Power Automate, Power BI — secure, scalable, user-first solutions.</div>
-        </div>
-        <div class="card">
-          <h3>Copilot & AI Integration</h3>
-          <div class="muted">Copilot readiness, custom Copilot agents, automation workflows, and AI-driven decision support.</div>
-        </div>
-      </div>
+            <div class="service-box">
+                <h3>Copilot & AI Agents</h3>
+                <p>Copilot readiness, configuration, custom AI bot development, automation, and business intelligence.</p>
+            </div>
 
-      <div class="grid" style="margin-top:24px">
-        <div class="card">
-          <h3>Integration & Data</h3>
-          <div class="muted">Azure SQL, Synapse, Fabric, SharePoint, APIs, and secure data pipelines.</div>
-        </div>
-        <div class="card">
-          <h3>Custom Development</h3>
-          <div class="muted">C#, .NET Core, JavaScript, HTML/CSS, Plugins, PCF controls and API integrations.</div>
-        </div>
-        <div class="card">
-          <h3>Adoption & Support</h3>
-          <div class="muted">User adoption programs, training, governance, and 24/7 managed support.</div>
-        </div>
-      </div>
-    </section>
-    
-    <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 50px 0;">
+            <div class="service-box">
+                <h3>Custom Development</h3>
+                <p>C#, .NET Core, JavaScript, Liquid, SQL, Azure Functions, APIs, SharePoint integrations.</p>
+            </div>
+        </div>
+    </section>
 
-    <section id="projects" class="projects">
-      <h2>Selected Projects</h2>
-      <div class="project-list">
-        <div class="project">
-          <strong>Enterprise CRM Modernization</strong>
-          <div class="muted">Dynamics 365 Sales & Customer Service migration, Copilot integration, and Power BI dashboards.</div>
-        </div>
-        <div class="project">
-          <strong>Secure B2C Portal (Power Pages)</strong>
-          <div class="muted">Self-service portal with entity lists, liquid templates, external B2C integration and SSO via Entra ID.</div>
-        </div>
-        <div class="project">
-          <strong>Automation & Integration Hub</strong>
-          <div class="muted">Power Automate enterprise flows connecting Dynamics, Azure SQL, and third-party APIs for order processing.</div>
-        </div>
-        <div class="project">
-          <strong>Analytics & Fabric</strong>
-          <div class="muted">Power BI & Fabric dataflows for unified analytics and executive dashboards.</div>
-        </div>
-      </div>
-    </section>
-    
-    <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 50px 0;">
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p style="text-align:center; font-size:20px;">
+            👤 <strong>Sohail Yousaf — Company Owner</strong><br>
+            📧 Emails: sohailsaim72@gmail.com | shahzaibxaim@gmail.com <br>
+            👨‍💼 <strong>Shahzaib — Senior Business Consultant</strong> | +92 306 6444090 <br>
+            📞 Contact (Owner): +92 304 9639965
+        </p>
+    </section>
 
-    <section id="about">
-      <h2>About Helper Dynamics</h2>
-      <p class="muted">Helper Dynamics is a Microsoft-certified consultancy specializing in Dynamics 365, Power Platform, and the Microsoft cloud. We help organizations adopt AI-powered business processes, secure integrations, and measurable outcomes. Our solutions emphasize security, scale, and adoption—so technical value converts into real business impact.</p>
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Helper Dynamics — Microsoft Dynamics 365 & Power Platform Consultant Company</p>
+    </footer>
 
-      <h3 style="margin-top:24px; font-weight: 700; font-size: 22px;">Why choose us?</h3>
-      <ul class="muted" style="margin-top:10px; padding-left: 20px;">
-        <li style="margin-bottom: 6px;">Microsoft certified expertise across Dynamics & Power Platform</li>
-        <li style="margin-bottom: 6px;">Copilot and AI-first approach to increase productivity</li>
-        <li style="margin-bottom: 6px;">Strong focus on security, governance, and user adoption</li>
-        <li>End-to-end delivery: assessment → implementation → support</li>
-      </ul>
-    </section>
-    
-    <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 50px 0;">
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p class="muted">Send us a message to book a consultation or ask for a project estimate.</p>
-
-      <div class="card" style="max-width:680px; padding: 30px;">
-        <form action="#" onsubmit="alert('Thanks! Please commit this form to a server or replace the action with your contact endpoint.');return false;" style="display:flex;flex-direction:column;gap:14px">
-          <input name="name" placeholder="Your name" />
-          <input name="email" placeholder="Your email" />
-          <textarea name="message" rows="4" placeholder="Message"></textarea>
-          <div class="cta-row" style="margin-top: 6px;">
-            <button class="btn" type="submit">Send Message</button>
-            <a class="btn ghost" href="mailto:sohailsaim72@gmail.com">Email Us</a>
-          </div>
-        </form>
-      </div>
-
-      <div style="margin-top:20px;color:var(--muted)">
-        <div><strong>Email:</strong> sohailsaim72@gmail.com</div>
-        <div><strong>Phone:</strong> +92 304 9639965</div>
-        <div><strong>Alternate Email:</strong> Shahzaibxaim@gmail.com | <strong>Alternate Phone:</strong> +92 306 6444090</div>
-      </div>
-    </section>
-
-    <footer>
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap">
-        <div>
-          © <strong>Helper Dynamics</strong> — Your Partner in Dynamics 365. Built with care.
-        </div>
-        <div style="color:var(--muted)">Designed for enterprise consulting & Microsoft ecosystem solutions.</div>
-      </div>
-    </footer>
-  </div>
 </body>
 </html>
