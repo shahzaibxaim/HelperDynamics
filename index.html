@@ -4,164 +4,159 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Helper Dynamics — Microsoft Dynamics 365 & Power Platform Consultant</title>
-  <meta name="description" content="Helper Dynamics — Your Partner in Dynamics 365 & Power Platform. Microsoft-Certified Techno-Functional Consultant, Copilot Specialist." />
+  <meta name="description" content="Helper Dynamics — Your Partner in Dynamics 365 & Power Platform. Owned by Sohail — Microsoft-Certified Techno-Functional Consultant.">
   <style>
     :root{
       --blue:#0a66c2; --dark:#071028; --muted:#6b7a8a; --gold:#d4af37;
+      --card:#0f2436; --glass:rgba(255,255,255,0.04);
       font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
     *{box-sizing:border-box}
     body{margin:0;background:linear-gradient(180deg,#071028 0%, #051426 100%);color:#eaf4ff;line-height:1.5}
-    .container{max-width:1200px;margin:0 auto;padding:50px 24px}
-
-    /* Header */
+    .container{max-width:1100px;margin:0 auto;padding:40px 20px}
     header{display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:16px}
-    .logo{width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,var(--blue),#00b4ff);display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:22px}
-    h1{margin:0;font-size:26px;font-weight:800}
-    .tag{color:var(--muted);font-size:14px;font-weight:500}
-    nav a{color:rgba(255,255,255,0.9);text-decoration:none;margin-left:22px;font-weight:700;font-size:15px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--blue),#00b4ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:white}
+    h1{margin:0;font-size:22px}
+    .tag{color:var(--muted);font-size:13px}
+    nav a{color:rgba(255,255,255,0.85);text-decoration:none;margin-left:18px;font-weight:600}
 
-    /* HERO */
-    .hero{display:flex;gap:40px;align-items:center;margin-top:50px}
+    .hero{display:flex;gap:36px;align-items:center;margin-top:36px}
     .hero-left{flex:1}
-    .kicker{display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.04);border-radius:999px;color:var(--gold);font-weight:700;font-size:13px}
-    .hero h2{font-size:42px;margin:16px 0 12px;line-height:1.2;font-weight:900}
-    .lead{color:#d7ebff;margin-bottom:22px;font-size:17px}
-    .cta-row{display:flex;gap:14px;margin-top:8px}
-    .btn{background:var(--blue);border:none;padding:14px 20px;border-radius:12px;font-weight:800;color:white;cursor:pointer;font-size:15px}
-    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.1)}
+    .kicker{display:inline-block;padding:6px 10px;background:var(--glass);border-radius:999px;color:var(--gold);font-weight:700;font-size:13px}
+    .hero h2{font-size:36px;margin:12px 0 8px}
+    .lead{color:#cfe8ff;margin-bottom:18px}
+    .cta-row{display:flex;gap:12px}
+    .btn{background:var(--blue);border:none;padding:12px 16px;border-radius:10px;font-weight:700;color:white;cursor:pointer}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.08)}
 
-    /* HERO RIGHT */
-    .hero-right{width:440px;background:rgba(255,255,255,0.03);padding:26px;border-radius:16px;border:1px solid rgba(255,255,255,0.05)}
-    .contact-box{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+    .hero-right{width:420px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,0.04)}
+    .contact-box{display:flex;flex-direction:column;gap:8px}
     .contact-box strong{color:var(--gold)}
 
-    /* Services */
-    h2{font-size:30px;font-weight:900;margin-top:50px;margin-bottom:12px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .card{background:rgba(255,255,255,0.03);padding:22px;border-radius:14px;border:1px solid rgba(255,255,255,0.04)}
-    .card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,0.1)}
-    .card h3{margin:0 0 10px}
-    .muted{color:var(--muted);font-size:15px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .card h3{margin:0 0 8px}
+    .muted{color:var(--muted);font-size:14px}
 
-    /* Projects */
-    .project-list{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-    .project{padding:18px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04)}
-    .project:hover{transform:translateY(-3px)}
+    .projects{margin-top:28px}
+    .project-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .project{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
 
-    /* About */
-    #about{margin-top:40px}
+    footer{margin-top:44px;padding:24px 0;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted)}
 
-    /* Contact */
-    form{display:flex;flex-direction:column;gap:12px;margin-top:10px}
-    input, textarea{
-      padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);
-      background:rgba(255,255,255,0.03);color:white;font-size:15px;
+    @media (max-width:900px){
+      .hero{flex-direction:column}
+      .hero-right{width:100%}
+      .grid{grid-template-columns:repeat(1,1fr)}
+      .project-list{grid-template-columns:repeat(1,1fr)}
+      nav{display:none}
     }
 
-    /* Footer */
-    footer{margin-top:50px;padding:30px 0;border-top:1px solid rgba(255,255,255,0.05);color:var(--muted);font-size:14px}
+    .skill{display:inline-block;padding:6px 10px;background:rgba(255,255,255,0.02);border-radius:999px;margin:6px 6px 0 0;font-weight:600;color:#e8f6ff}
   </style>
 </head>
 <body>
+  <div class="container">
 
-<div class="container">
-
-  <!-- HEADER -->
-  <header>
-    <div class="brand">
-      <div class="logo">HD</div>
-      <div>
-        <h1>Helper Dynamics</h1>
-        <div class="tag">Your Partner In Dynamics 365 & Power Platform</div>
+    <header>
+      <div class="brand">
+        <div class="logo">HD</div>
+        <div>
+          <h1>Helper Dynamics</h1>
+          <div class="tag">Owned by Sohail — Microsoft Dynamics 365 & Power Platform Consultant</div>
+        </div>
       </div>
-    </div>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left">
-      <div class="kicker">Microsoft-Certified • Copilot Specialist</div>
-      <h2>We build secure, scalable & intelligent Microsoft solutions.</h2>
-      <p class="lead">
-        Dynamics 365, Power Platform, Azure, Copilot — enterprise-grade consulting & implementation.
-      </p>
+    <section class="hero">
+      <div class="hero-left">
+        <div class="kicker">Microsoft-Certified • Copilot Specialist</div>
 
-      <div class="cta-row">
-        <a class="btn" href="#contact">Get a Consultation</a>
-        <a class="btn ghost" href="#projects">View Projects</a>
+        <h2>Secure, scalable and future-ready Dynamics 365 & Power Platform solutions for your business.</h2>
+
+        <p class="lead">
+          Helper Dynamics is led by <strong>Sohail</strong> — a Microsoft-Certified Techno-Functional Consultant.
+          Supporting consultant: <strong>Shahzaib</strong>, specializing in Dynamics 365 & Power Platform delivery, design & automation.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn" href="#contact">Contact Owner (Sohail)</a>
+          <a class="btn ghost" href="#projects">View Projects</a>
+        </div>
+
+        <div style="margin-top:18px">
+          <div style="font-weight:800;margin-bottom:8px">Core Capabilities</div>
+          <div>
+            <span class="skill">Dynamics 365: Sales</span>
+            <span class="skill">Customer Service</span>
+            <span class="skill">Field Service</span>
+            <span class="skill">Power Pages</span>
+            <span class="skill">Power BI</span>
+            <span class="skill">Power Automate</span>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <aside class="hero-right">
-      <div><strong>Email:</strong> sohailsaim72@gmail.com</div>
-      <div><strong>Phone:</strong> +92 304 9639965</div>
-      <div><strong>Alternate:</strong> Shahzaib — +92 306 6444090</div>
-    </aside>
-  </section>
+      <aside class="hero-right">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div>
+            <div style="font-size:13px;color:var(--muted)">Company Owner</div>
+            <div style="font-weight:800;margin-top:6px">🏅 Sohail — Microsoft-Certified Consultant</div>
+          </div>
+          <div style="text-align:right;color:var(--muted);font-size:13px">Business Consultant:<br><strong>Shahzaib</strong></div>
+        </div>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <h2>Services</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Dynamics 365</h3>
-        <div class="muted">Sales, Customer Service, Field Service, Marketing, BC, F&O.</div>
+        <div class="contact-box" style="margin-top:14px">
+          <div><strong>Email (Owner):</strong> sohailsaim72@gmail.com</div>
+          <div><strong>Phone (Owner):</strong> +92 304 9639965</div>
+          <div><strong>Consultant:</strong> Shahzaib — shahzaibxaim@gmail.com | +92 306 6444090</div>
+        </div>
+
+        <div style="margin-top:12px;border-radius:8px;padding:10px;background:rgba(255,255,255,0.01);border:1px dashed rgba(255,255,255,0.02)">
+          <div style="font-weight:700;margin-bottom:6px">Copilot & AI Services</div>
+          <div class="muted">Readiness assessments, custom Copilot agents, secure integrations, and automation to unlock AI in Dynamics & Microsoft 365.</div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="contact" style="margin-top:28px">
+      <h2>Contact Owner (Sohail)</h2>
+      <p class="muted">Send your message and it will directly reach the owner via email.</p>
+
+      <div class="card" style="max-width:680px">
+
+        <!-- Working send-to-email form -->
+        <form action="mailto:sohailsaim72@gmail.com" method="POST" enctype="text/plain" style="display:flex;flex-direction:column;gap:10px">
+          <input name="Name" placeholder="Your name" required />
+          <input name="Email" placeholder="Your email" required />
+          <textarea name="Message" rows="4" placeholder="Your message..." required></textarea>
+
+          <div style="display:flex;gap:10px">
+            <button class="btn" type="submit">Send Message to Sohail</button>
+            <a class="btn ghost" href="mailto:sohailsaim72@gmail.com">Email Direct</a>
+          </div>
+        </form>
+
       </div>
-      <div class="card">
-        <h3>Power Platform</h3>
-        <div class="muted">Power Apps, Power Pages, Power Automate, Power BI.</div>
+
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap">
+        <div>
+          © <strong>Helper Dynamics</strong> — Owned by Sohail.
+        </div>
+        <div style="color:var(--muted)">Consulting in Dynamics 365 • Power Platform • AI & Copilot</div>
       </div>
-      <div class="card">
-        <h3>AI & Copilot</h3>
-        <div class="muted">Custom Copilot agents, secure integrations, automation.</div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-list">
-      <div class="project">✔ CRM for Real Estate – Automated leads & Power Pages portal</div>
-      <div class="project">✔ School Management System – Complete Power Platform solution</div>
-      <div class="project">✔ Customer Service AI Chatbot using Copilot Studio</div>
-      <div class="project">✔ Sales dashboards (Power BI)</div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>About</h2>
-    <p class="muted">
-      Helper Dynamics is a Microsoft-focused consulting company led by Sohail Yousaf,
-      delivering Dynamics 365, Power Platform, Azure & Copilot solutions globally.
-    </p>
-  </section>
-
-  <!-- CONTACT FORM -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/mqakgnzb" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button class="btn" type="submit">Send Message</button>
-    </form>
-  </section>
-
-</div>
-
-<footer>
-  © 2025 Helper Dynamics. All rights reserved.
-</footer>
-
+  </div>
 </body>
 </html>
