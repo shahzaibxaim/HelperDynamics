@@ -1,162 +1,1299 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Helper Dynamics — Microsoft Dynamics 365 & Power Platform Consultant</title>
-  <meta name="description" content="Helper Dynamics — Your Partner in Dynamics 365 & Power Platform. Owned by Sohail — Microsoft-Certified Techno-Functional Consultant.">
-  <style>
-    :root{
-      --blue:#0a66c2; --dark:#071028; --muted:#6b7a8a; --gold:#d4af37;
-      --card:#0f2436; --glass:rgba(255,255,255,0.04);
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,#071028 0%, #051426 100%);color:#eaf4ff;line-height:1.5}
-    .container{max-width:1100px;margin:0 auto;padding:40px 20px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--blue),#00b4ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:white}
-    h1{margin:0;font-size:22px}
-    .tag{color:var(--muted);font-size:13px}
-    nav a{color:rgba(255,255,255,0.85);text-decoration:none;margin-left:18px;font-weight:600}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helper Dynamics — Microsoft Dynamics 365 & Power Platform Consultant</title>
+    <meta name="description" content="Microsoft-Certified Techno-Functional Consultants specializing in Dynamics 365, Power Platform, Azure, and Copilot solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0067b8; /* Microsoft blue */
+            --primary-dark: #005da6;
+            --secondary: #107c10; /* Microsoft green */
+            --accent: #ffb900; /* Microsoft yellow */
+            --dark: #1a1a1a;
+            --dark-light: #2d2d2d;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --transition: all 0.3s ease;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
 
-    .hero{display:flex;gap:36px;align-items:center;margin-top:36px}
-    .hero-left{flex:1}
-    .kicker{display:inline-block;padding:6px 10px;background:var(--glass);border-radius:999px;color:var(--gold);font-weight:700;font-size:13px}
-    .hero h2{font-size:36px;margin:12px 0 8px}
-    .lead{color:#cfe8ff;margin-bottom:18px}
-    .cta-row{display:flex;gap:12px}
-    .btn{background:var(--blue);border:none;padding:12px 16px;border-radius:10px;font-weight:700;color:white;cursor:pointer}
-    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.08)}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .hero-right{width:420px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,0.04)}
-    .contact-box{display:flex;flex-direction:column;gap:8px}
-    .contact-box strong{color:var(--gold)}
+        html {
+            scroll-behavior: smooth;
+        }
 
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-    .card h3{margin:0 0 8px}
-    .muted{color:var(--muted);font-size:14px}
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
 
-    .projects{margin-top:28px}
-    .project-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    .project{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-    footer{margin-top:44px;padding:24px 0;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted)}
+        ul {
+            list-style: none;
+        }
 
-    @media (max-width:900px){
-      .hero{flex-direction:column}
-      .hero-right{width:100%}
-      .grid{grid-template-columns:repeat(1,1fr)}
-      .project-list{grid-template-columns:repeat(1,1fr)}
-      nav{display:none}
-    }
+        img {
+            max-width: 100%;
+        }
 
-    .skill{display:inline-block;padding:6px 10px;background:rgba(255,255,255,0.02);border-radius:999px;margin:6px 6px 0 0;font-weight:600;color:#e8f6ff}
-  </style>
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            color: var(--dark);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            max-width: 700px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background: #0d6b0d;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 160px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="white"/></svg>');
+            background-size: 100% 100px;
+            background-repeat: no-repeat;
+            background-position: bottom;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-visual {
+            width: 100%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .tech-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            border-radius: 10px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-description {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+
+        .stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--gray-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-description {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            margin-top: 20px;
+        }
+
+        .service-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .service-feature i {
+            color: var(--secondary);
+        }
+
+        /* Skills Section */
+        .skills {
+            background: white;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .skill-category {
+            background: var(--gray-light);
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .skill-category-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-category-title i {
+            color: var(--primary);
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .skill-item:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Team Section */
+        .team {
+            background: var(--gray-light);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .member-image {
+            height: 250px;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+        }
+
+        .member-info {
+            padding: 25px;
+        }
+
+        .member-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .member-role {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .member-description {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .member-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .member-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gray);
+        }
+
+        .member-contact-item i {
+            color: var(--primary);
+            width: 20px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .contact-details p {
+            color: var(--gray);
+        }
+
+        .contact-form {
+            background: var(--gray-light);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 103, 184, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-link {
+            color: #b0b7c3;
+            transition: var(--transition);
+        }
+
+        .footer-link:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-about p {
+            color: #b0b7c3;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b0b7c3;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .stats {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                gap: 30px;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 140px 0 80px;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-
+    <!-- Header -->
     <header>
-      <div class="brand">
-        <div class="logo">HD</div>
-        <div>
-          <h1>Helper Dynamics</h1>
-          <div class="tag">Owned by Sohail — Microsoft Dynamics 365 & Power Platform Consultant</div>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">HD</div>
+                <div class="logo-text">Helper <span>Dynamics</span></div>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#team" class="nav-link">Team</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-      </div>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
     </header>
 
-    <section class="hero">
-      <div class="hero-left">
-        <div class="kicker">Microsoft-Certified • Copilot Specialist</div>
-
-        <h2>Secure, scalable and future-ready Dynamics 365 & Power Platform solutions for your business.</h2>
-
-        <p class="lead">
-          Helper Dynamics is led by <strong>Sohail</strong> — a Microsoft-Certified Techno-Functional Consultant.
-          Supporting consultant: <strong>Shahzaib</strong>, specializing in Dynamics 365 & Power Platform delivery, design & automation.
-        </p>
-
-        <div class="cta-row">
-          <a class="btn" href="#contact">Contact Owner (Sohail)</a>
-          <a class="btn ghost" href="#projects">View Projects</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <i class="fas fa-award"></i> Microsoft-Certified Techno-Functional Consultant
+                </div>
+                <h1 class="hero-title">Unlock AI-Driven Productivity with Dynamics 365 & Power Platform</h1>
+                <p class="hero-description">
+                    We help organizations implement secure, scalable solutions across Dynamics 365, Power Platform, and Microsoft 365. From readiness assessments to custom Copilot integrations, we make AI your business productivity partner.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn">Get Started</a>
+                    <a href="#services" class="btn btn-outline" style="color: white; border-color: white;">Our Services</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-visual">
+                    <h3 style="margin-bottom: 20px; text-align: center;">Our Expertise</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="fab fa-microsoft"></i></div>
+                            <div>Dynamics 365</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="fas fa-bolt"></i></div>
+                            <div>Power Platform</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="fas fa-cloud"></i></div>
+                            <div>Azure</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="fas fa-robot"></i></div>
+                            <div>Copilot AI</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="fas fa-chart-line"></i></div>
+                            <div>Power BI</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="fas fa-cogs"></i></div>
+                            <div>Automation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div style="margin-top:18px">
-          <div style="font-weight:800;margin-bottom:8px">Core Capabilities</div>
-          <div>
-            <span class="skill">Dynamics 365: Sales</span>
-            <span class="skill">Customer Service</span>
-            <span class="skill">Field Service</span>
-            <span class="skill">Power Pages</span>
-            <span class="skill">Power BI</span>
-            <span class="skill">Power Automate</span>
-          </div>
-        </div>
-      </div>
-
-      <aside class="hero-right">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start">
-          <div>
-            <div style="font-size:13px;color:var(--muted)">Company Owner</div>
-            <div style="font-weight:800;margin-top:6px">🏅 Sohail — Microsoft-Certified Consultant</div>
-          </div>
-          <div style="text-align:right;color:var(--muted);font-size:13px">Business Consultant:<br><strong>Shahzaib</strong></div>
-        </div>
-
-        <div class="contact-box" style="margin-top:14px">
-          <div><strong>Email (Owner):</strong> sohailsaim72@gmail.com</div>
-          <div><strong>Phone (Owner):</strong> +92 304 9639965</div>
-          <div><strong>Consultant:</strong> Shahzaib — shahzaibxaim@gmail.com | +92 306 6444090</div>
-        </div>
-
-        <div style="margin-top:12px;border-radius:8px;padding:10px;background:rgba(255,255,255,0.01);border:1px dashed rgba(255,255,255,0.02)">
-          <div style="font-weight:700;margin-bottom:6px">Copilot & AI Services</div>
-          <div class="muted">Readiness assessments, custom Copilot agents, secure integrations, and automation to unlock AI in Dynamics & Microsoft 365.</div>
-        </div>
-      </aside>
     </section>
 
-    <section id="contact" style="margin-top:28px">
-      <h2>Contact Owner (Sohail)</h2>
-      <p class="muted">Send your message and it will directly reach the owner via email.</p>
-
-      <div class="card" style="max-width:680px">
-
-        <!-- Working send-to-email form -->
-        <form action="mailto:sohailsaim72@gmail.com" method="POST" enctype="text/plain" style="display:flex;flex-direction:column;gap:10px">
-          <input name="Name" placeholder="Your name" required />
-          <input name="Email" placeholder="Your email" required />
-          <textarea name="Message" rows="4" placeholder="Your message..." required></textarea>
-
-          <div style="display:flex;gap:10px">
-            <button class="btn" type="submit">Send Message to Sohail</button>
-            <a class="btn ghost" href="mailto:sohailsaim72@gmail.com">Email Direct</a>
-          </div>
-        </form>
-
-      </div>
-
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About Helper Dynamics</h2>
+            <p class="section-subtitle">
+                With 8+ years of experience, we deliver scalable, future-ready solutions using Microsoft's powerful business platforms.
+            </p>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description">
+                        Helper Dynamics specializes in implementing and customizing Microsoft Dynamics 365, Power Platform, and Azure solutions that drive business transformation. Our team of certified experts helps organizations leverage AI and automation to improve efficiency, enhance customer experiences, and achieve measurable ROI.
+                    </p>
+                    <p class="about-description">
+                        We combine technical expertise with business process knowledge to deliver solutions that not only meet current needs but also scale for future growth. From Copilot integrations to custom development, we make advanced technology accessible and actionable for your organization.
+                    </p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number">8+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Client Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Business Technology">
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">
+                Comprehensive Microsoft solutions to transform your business operations and drive growth.
+            </p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3 class="service-title">Dynamics 365 Implementation</h3>
+                    <p class="service-description">
+                        End-to-end implementation of Dynamics 365 modules including Sales, Customer Service, Field Service, and Marketing.
+                    </p>
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Business process analysis</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Customization & configuration</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Data migration & integration</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>User training & support</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="service-title">Power Platform Solutions</h3>
+                    <p class="service-description">
+                        Develop custom business applications, automate workflows, and create insightful dashboards with Power Platform.
+                    </p>
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Power Apps development</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Power Automate workflows</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Power BI dashboards</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Power Pages portals</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="service-title">AI & Copilot Integration</h3>
+                    <p class="service-description">
+                        Implement Microsoft Copilot and AI solutions to enhance productivity and decision-making across your organization.
+                    </p>
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Copilot readiness assessment</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Custom Copilot agent development</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>AI-powered workflow automation</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Secure deployment & governance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <h2 class="section-title">Core Skills</h2>
+            <p class="section-subtitle">
+                Our comprehensive expertise across the Microsoft ecosystem ensures we deliver robust, integrated solutions.
+            </p>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <i class="fab fa-microsoft"></i> Dynamics 365 Modules
+                    </h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Sales</span>
+                        <span class="skill-item">Customer Service</span>
+                        <span class="skill-item">Field Service</span>
+                        <span class="skill-item">Marketing</span>
+                        <span class="skill-item">Business Central</span>
+                        <span class="skill-item">Finance & Operations</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <i class="fas fa-globe"></i> Power Pages / Portals
+                    </h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Entity Lists</span>
+                        <span class="skill-item">Web Forms</span>
+                        <span class="skill-item">Web Templates</span>
+                        <span class="skill-item">Liquid Code</span>
+                        <span class="skill-item">B2C Integrations</span>
+                        <span class="skill-item">Secure Portals</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <i class="fas fa-code"></i> Custom Development
+                    </h3>
+                    <div class="skill-items">
+                        <span class="skill-item">C#</span>
+                        <span class="skill-item">.NET Core</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">HTML/CSS</span>
+                        <span class="skill-item">SharePoint</span>
+                        <span class="skill-item">SQL</span>
+                        <span class="skill-item">APIs</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <i class="fas fa-tools"></i> Tools & Technologies
+                    </h3>
+                    <div class="skill-items">
+                        <span class="skill-item">XRM Toolbox</span>
+                        <span class="skill-item">Ribbon Workbench</span>
+                        <span class="skill-item">SSIS</span>
+                        <span class="skill-item">SSRS</span>
+                        <span class="skill-item">CRM SDK</span>
+                        <span class="skill-item">Azure Synapse</span>
+                        <span class="skill-item">Microsoft Fabric</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section team">
+        <div class="container">
+            <h2 class="section-title">Our Team</h2>
+            <p class="section-subtitle">
+                Meet the certified experts behind Helper Dynamics and their specialized roles.
+            </p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Sohail Yousaf</h3>
+                        <p class="member-role">Senior Microsoft Dynamics 365 Developer</p>
+                        <p class="member-description">
+                            Sohail brings extensive technical expertise in Dynamics 365 development, customization, and implementation. With a focus on creating scalable solutions, he ensures our clients get the most value from their Microsoft investments.
+                        </p>
+                        <div class="member-contact">
+                            <div class="member-contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>sohailsaim72@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Shahzaib Aslam</h3>
+                        <p class="member-role">Business Consultant – Microsoft Dynamics 365 & Power Platform</p>
+                        <p class="member-description">
+                            Shahzaib combines business process knowledge with technical expertise to deliver solutions that align with organizational goals. He specializes in requirements analysis, solution design, and user adoption strategies.
+                        </p>
+                        <div class="member-contact">
+                            <div class="member-contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>shahzaibxaim@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">
+                Ready to transform your business with Microsoft solutions? Contact us for a consultation.
+            </p>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email Us</h3>
+                            <p>sohailsaim72@gmail.com</p>
+                            <p>shahzaibxaim@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Call Us</h3>
+                            <p>Sohail: +92 304 9639965</p>
+                            <p>Shahzaib: +92 306 6444090</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Our Focus</h3>
+                            <p>Microsoft Dynamics 365</p>
+                            <p>Power Platform & Azure</p>
+                            <p>AI & Copilot Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="mailto:sohailsaim72@gmail.com" method="POST" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap">
-        <div>
-          © <strong>Helper Dynamics</strong> — Owned by Sohail.
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col footer-about">
+                    <h3>Helper Dynamics</h3>
+                    <p>
+                        Microsoft-Certified Techno-Functional Consultants specializing in Dynamics 365, Power Platform, Azure, and Copilot solutions to drive business transformation.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-microsoft"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home" class="footer-link">Home</a></li>
+                        <li><a href="#about" class="footer-link">About Us</a></li>
+                        <li><a href="#services" class="footer-link">Services</a></li>
+                        <li><a href="#skills" class="footer-link">Skills</a></li>
+                        <li><a href="#team" class="footer-link">Our Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Dynamics 365</a></li>
+                        <li><a href="#" class="footer-link">Power Platform</a></li>
+                        <li><a href="#" class="footer-link">AI & Copilot</a></li>
+                        <li><a href="#" class="footer-link">Custom Development</a></li>
+                        <li><a href="#" class="footer-link">Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><i class="fas fa-envelope"></i> sohailsaim72@gmail.com</li>
+                        <li class="footer-link"><i class="fas fa-envelope"></i> shahzaibxaim@gmail.com</li>
+                        <li class="footer-link"><i class="fas fa-phone"></i> +92 304 9639965</li>
+                        <li class="footer-link"><i class="fas fa-phone"></i> +92 306 6444090</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Helper Dynamics. All rights reserved.</p>
+            </div>
         </div>
-        <div style="color:var(--muted)">Consulting in Dynamics 365 • Power Platform • AI & Copilot</div>
-      </div>
     </footer>
 
-  </div>
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-menu').classList.remove('active');
+            });
+        });
+
+        // Scroll animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = function() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        
+        // Initial check
+        fadeInOnScroll();
+        
+        // Listen for scroll
+        window.addEventListener('scroll', fadeInOnScroll);
+    </script>
 </body>
 </html>
